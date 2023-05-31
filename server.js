@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const PORT = 3000;
 
@@ -143,6 +144,8 @@ const products = [
       "https://www.mascarilha.pt/pub/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/7/1/71635_a.png",
   },
 ];
+
+app.use(cors());
 
 app.get("/products", (req, res) => {
   res.json(products);
