@@ -53,7 +53,7 @@ const products = [
   },
   {
     id: 6,
-    name: "Shitty Santos populares music - Best of ",
+    name: "Shitty Santos Populares music - Best of ",
     price: 2.5,
     category: "Music",
     description: "So bad that is good",
@@ -170,7 +170,7 @@ app.get("/categories", (req, res) => {
 app.get("/categories/:name", (req, res) => {
   const categoryName = req.params.name.toLowerCase();
   const filteredProducts = products.filter(
-    (product) => product.category === categoryName
+    (product) => product.category.toLowerCase() === categoryName
   );
   res.json(filteredProducts);
 });
