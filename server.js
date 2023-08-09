@@ -148,7 +148,9 @@ const products = [
 app.use(cors());
 
 app.get("/products", (req, res) => {
-  res.json(products);
+  setTimeout(() => {
+    res.json(products);
+  }, 5000);
 });
 
 app.get("/products/:id", (req, res) => {
